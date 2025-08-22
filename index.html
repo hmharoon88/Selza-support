@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selza Support - Scratch-Off Lottery Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+            background: white;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .contact-info h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Selza Support</h1>
+            <p>Scratch-Off Lottery Management App</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I set up my first location?</div>
+                    <div class="faq-answer">
+                        <p>1. Open Selza and sign in to your account<br>
+                        2. Tap "Choose Location" on the dashboard<br>
+                        3. Tap "Add New Location"<br>
+                        4. Enter location name, address, and optional PIN<br>
+                        5. Tap "Save Location" to complete setup</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I scan scratch-off tickets?</div>
+                    <div class="faq-answer">
+                        <p>1. Open the barcode scanner from the dashboard<br>
+                        2. Point your camera at the ticket barcode<br>
+                        3. The app will automatically detect and process the ticket<br>
+                        4. Ticket information will be displayed and saved<br>
+                        5. You can also use external Bluetooth scanners for faster processing</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I start tracking a shift?</div>
+                    <div class="faq-answer">
+                        <p>1. Go to "Current Shift" from the dashboard<br>
+                        2. Tap "Start Shift" to begin tracking<br>
+                        3. The app will automatically track time and sales<br>
+                        4. Tap "End Shift" when you're finished<br>
+                        5. View detailed shift reports in "Last Shift"</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I manage inventory?</div>
+                    <div class="faq-answer">
+                        <p>1. Go to "Update Inventory" from the dashboard<br>
+                        2. Add new scratch-off tickets with game numbers<br>
+                        3. Set initial stock levels for each ticket type<br>
+                        4. Scan tickets to automatically update inventory<br>
+                        5. View real-time stock levels and sales data</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">Can I use Selza offline?</div>
+                    <div class="faq-answer">
+                        <p>Yes! Selza works offline with local data storage. When you're back online, all data will automatically sync to the cloud. This ensures you never lose important information even without internet connection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I add multiple users?</div>
+                    <div class="faq-answer">
+                        <p>1. Go to Settings → User Management<br>
+                        2. Tap "Add User"<br>
+                        3. Enter the new user's email address<br>
+                        4. Set appropriate permissions and access levels<br>
+                        5. The user will receive an invitation email</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How secure is my data?</div>
+                    <div class="faq-answer">
+                        <p>Selza uses enterprise-grade security with Firebase authentication and encryption. All data is encrypted in transit and at rest. We never share your business data with third parties.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">How do I export my data?</div>
+                    <div class="faq-answer">
+                        <p>1. Go to Settings → Data Management<br>
+                        2. Tap "Export Data"<br>
+                        3. Choose the date range and data types<br>
+                        4. Select export format (CSV, PDF)<br>
+                        5. Download or email the report</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    <li>Multi-location scratch-off management</li>
+                    <li>Real-time barcode scanning</li>
+                    <li>Shift tracking and management</li>
+                    <li>Inventory control and alerts</li>
+                    <li>Sales and returns processing</li>
+                    <li>Customizable ticket forms</li>
+                    <li>Offline functionality</li>
+                    <li>Cloud synchronization</li>
+                    <li>Enterprise security</li>
+                    <li>Professional reporting</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>System Requirements</h2>
+                <ul class="feature-list">
+                    <li>iOS 15.0 or later</li>
+                    <li>iPhone or iPad</li>
+                    <li>Internet connection for initial setup and sync</li>
+                    <li>Camera for barcode scanning</li>
+                    <li>Bluetooth for external scanners (optional)</li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Need More Help?</h3>
+                <p><strong>Email Support:</strong> <a href="mailto:support@selza.com">support@selza.com</a></p>
+                <p><strong>Response Time:</strong> Within 24 hours</p>
+                <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 6 PM EST</p>
+                <br>
+                <a href="mailto:support@selza.com" class="btn">Contact Support</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            answer.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
